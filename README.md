@@ -27,14 +27,13 @@ Everything else the church may want to change lives in **`src/content/church.ts`
 | Name, address, phone, email, Facebook | `church` | Verified from the church's Facebook page (facebook.com/foursquareilupeju) |
 | Theme — "A New Class of People" | `church.theme` | Provided by the church |
 | Service times | `services` | **Not verified — empty.** Add entries; they appear in the Visit section. Until then visitors are asked to call/email. |
-| Leadership | `leadership` | **Not verified — empty.** |
 | Church-life gallery | `life` | Generic labels (Worship, Prayer, Music…) — rename to the church's real ministries when confirmed. |
 | Sermons | `sermons` | **Not verified — empty.** The featured slot links to the Facebook page until real sermons are added. |
 | Events | `events` | District Convocation 2026 ("New Height"). Entries with `verified: false` are hidden. |
 
 ## Brand assets
 
-- `src/content/emblem.ts`, `public/brand/emblem/*.svg` — the official Foursquare emblem (cross, cup, dove, crown),
+- `src/content/emblem.ts` — the official Foursquare emblem (cross, cup, dove, crown),
   traced from the logo on foursquare.org.ng (`scripts/trace-emblem.mjs`) and split into its four symbols for animation.
   Colours (red cross, blue cup, gold dove, purple crown) sampled from the official colour icon.
 - `public/brand/foursquare-nigeria-logo-white.png` — official Foursquare Gospel Church in Nigeria logo (foursquare.org.ng).

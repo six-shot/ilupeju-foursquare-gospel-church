@@ -42,3 +42,6 @@ next-env.d.ts
 
 # design review captures
 /research/qc
+
+# local QC screenshots (scripts/capture.mjs)
+/research/qc/

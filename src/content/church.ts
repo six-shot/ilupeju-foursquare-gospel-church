@@ -63,16 +63,6 @@ export const services: { day: string; name: string; time: string; note?: string 
   { day: 'Thursday', name: 'Prayer Meeting', time: '6:30pm' },
 ];
 
-/**
- * Pastors. Names supplied by the church (transferred from Foursquare Grand Assembly
- * Ilupeju, whose YouTube channel lists Rev. Femi Ogbonmide as Senior Pastor and whose
- * Instagram credits Pst. Mrs. Yinka Ogbonmide). Roles here: confirm/adjust as needed.
- */
-export const leadership: { name: string; title: string; role: string; image: ImageKey }[] = [
-  { name: 'Femi Ogbonmide', title: 'Rev. Dr.', role: 'Pastor', image: 'pastorFemi' },
-  { name: 'Yinka Ogbonmide', title: 'Pst. Mrs.', role: 'Pastor', image: 'pastorYinka' },
-];
-
 /** National leadership (verified). */
 export const denomination = {
   founded: { value: '4 November 1954', verified: true, source: 'Wikipedia — Foursquare Gospel Church in Nigeria' },
