@@ -143,3 +143,12 @@ html.lenis body {
 html.is-loading body {
   overflow: hidden;
 }
+
+/* Hero programme ticker */
+@keyframes marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none !important; }
+}

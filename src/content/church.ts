@@ -118,6 +118,17 @@ export const sermons: {
  */
 export const events = [
   {
+    kicker: 'The Foursquare Gospel Church in Nigeria',
+    title: 'National Convention 2026',
+    theme: 'Breaking New Grounds',
+    date: '7–11 October 2026',
+    dateMain: '7–11 Oct',
+    dateSub: '2026',
+    detail: 'Foursquare Camp, Ajebo, Ogun State.',
+    image: 'event3' as ImageKey,
+    verified: true, // foursquarenigconvention.com lists "October 7-11, 2026"
+  },
+  {
     kicker: 'Ilupeju Missionary District',
     title: 'District Convocation 2026',
     theme: 'New Height',
@@ -138,17 +149,6 @@ export const events = [
     detail: 'The closing gathering of the convocation.',
     image: 'event2' as ImageKey,
     verified: true,
-  },
-  {
-    kicker: 'Coming up',
-    title: 'Your next event',
-    theme: 'To be announced',
-    date: 'Date to be confirmed',
-    dateMain: 'TBC',
-    dateSub: 'Date to be confirmed',
-    detail: 'Add upcoming events in src/content/church.ts.',
-    image: 'event3' as ImageKey,
-    verified: false,
   },
 ];
 

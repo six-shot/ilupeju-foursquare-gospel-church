@@ -25,7 +25,9 @@ export default function Nav() {
         <Emblem className="h-8 w-8" colored />
       </a>
       <header className="pointer-events-none fixed inset-x-0 top-0 z-50 flex items-center justify-between px-5 py-5 mix-blend-difference md:px-10">
-        <span className="eyebrow hidden pl-11 text-[0.66rem] text-ivory sm:inline">Ilupeju Foursquare Gospel Church</span>
+        <span className="eyebrow block pl-11 text-[0.62rem] leading-[1.35] text-ivory md:text-[0.66rem]">
+          Ilupeju Foursquare<br />Gospel Church
+        </span>
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}

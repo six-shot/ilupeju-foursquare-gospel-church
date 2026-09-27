@@ -3,7 +3,15 @@
 import { useRef } from 'react';
 import { gsap, useGSAP } from '@/lib/gsap';
 import { Chars, Frame, MaskLine } from './ui';
-import { church } from '@/content/church';
+import { church, events, services } from '@/content/church';
+import { EMBLEM_COLORS, EMBLEM_ORDER } from './Emblem';
+
+// Programme ticker: the weekly services, where we are, and what's coming up.
+const TICKER = [
+  ...services.map((s) => `${s.day} · ${s.name.replace(' — ', ': ')} · ${s.time}`),
+  church.address.value.replace(', Nigeria', ''),
+  ...events.filter((e) => e.verified).slice(0, 1).map((e) => `${e.title} · ${e.date}`),
+];
 
 /**
  * Cinematic opening, pinned for ~1.3 screens. Only transforms and opacity are animated
@@ -20,15 +28,18 @@ export default function Hero() {
     () => {
       const q = gsap.utils.selector(root);
       gsap.set(q('.h-char'), { yPercent: 115 });
-      gsap.set(q('.h-sub .line-inner, .h-meta .line-inner'), { yPercent: 110 });
+      gsap.set(q('.h-sub .line-inner, .h-welcome .line-inner'), { yPercent: 110 });
 
       const intro = gsap.timeline({ paused: true, defaults: { ease: 'expo.out' } });
       intro
         .fromTo(q('.h-bg'), { scale: 1.18 }, { scale: 1.08, duration: 2.8 }, 0)
         .to(q('.h-char'), { yPercent: 0, duration: 1.5, stagger: { each: 0.05, from: 'center' } }, 0.15)
         .to(q('.h-sub .line-inner'), { yPercent: 0, duration: 1.3 }, 0.45)
-        .to(q('.h-meta .line-inner'), { yPercent: 0, duration: 1.1, stagger: 0.06 }, 0.8)
-        .from(q('.h-scroll'), { opacity: 0, y: 20, duration: 1 }, 1.1);
+        .from(q('.h-scroll'), { opacity: 0, y: 20, duration: 1 }, 1.1)
+        .to(q('.h-welcome .line-inner'), { yPercent: 0, duration: 1.3, stagger: 0.09 }, 0.55)
+        .from(q('.h-cta > *'), { opacity: 0, y: 24, duration: 1, stagger: 0.08 }, 1.0)
+        .from(q('.h-ticker'), { opacity: 0, yPercent: 100, duration: 1.1 }, 1.05)
+        .from(q('.h-credit'), { opacity: 0, duration: 1 }, 1.4);
 
       const play = () => intro.play();
       window.addEventListener('loader:done', play, { once: true });
@@ -48,7 +59,8 @@ export default function Hero() {
           ease: 'power1.in',
         }, 0)
         .to(q('.h-sub'), { y: -70, opacity: 0, duration: 0.45 }, 0)
-        .to(q('.h-meta, .h-scroll'), { opacity: 0, duration: 0.25 }, 0)
+        .to(q('.h-ticker, .h-scroll, .h-credit'), { opacity: 0, duration: 0.25 }, 0)
+        .to(q('.h-welcome, .h-cta'), { y: -90, opacity: 0, duration: 0.45 }, 0)
         .to(q('.h-title-shade'), { opacity: 0, duration: 0.7 }, 0.1)
         .to(q('.h-flat-shade'), { opacity: 1, duration: 0.7 }, 0.1);
 
@@ -73,10 +85,11 @@ export default function Hero() {
       </div>
       {/* Legibility shade under the title; hands over to the flat shade the Story section starts with */}
       <div className="h-title-shade pointer-events-none absolute inset-0 bg-gradient-to-b from-ink/45 via-transparent to-ink/85" />
+      <div className="h-title-shade pointer-events-none absolute inset-0 bg-gradient-to-r from-ink/60 via-ink/15 to-transparent" />
       <div className="h-flat-shade pointer-events-none absolute inset-0 bg-ink/35 opacity-0" />
 
       {/* Title — set low, like a film title */}
-      <div className="absolute inset-x-0 bottom-[15svh] z-10 px-4 md:bottom-[11svh]">
+      <div className="absolute inset-x-0 bottom-[12svh] z-10 px-4 md:bottom-[9svh]">
         <div className="h-sub text-center">
           <MaskLine innerClass="serif text-[8vw] italic leading-none text-ivory md:text-[4.4vw]">
             Foursquare Gospel Church
@@ -87,13 +100,47 @@ export default function Hero() {
         </h1>
       </div>
 
-      {/* Meta */}
-      <div className="h-meta absolute inset-x-0 bottom-5 z-10 flex items-end justify-between px-5 text-ivory/80 md:px-10">
-        <div className="max-w-[40%]">
-          <MaskLine innerClass="eyebrow">{church.denomination.value}</MaskLine>
+      {/* Welcome */}
+      <div className="h-welcome-wrap absolute left-5 right-5 top-[15svh] z-10 max-w-[34rem] md:left-10 md:top-[22svh]">
+        <div className="h-welcome text-ivory">
+          <MaskLine innerClass="eyebrow text-fs-gold">Welcome home</MaskLine>
+          <p className="mt-4">
+            <MaskLine innerClass="serif text-[8.4vw] leading-[1.02] md:text-[3.3vw]">There&rsquo;s a seat saved for you</MaskLine>
+            <MaskLine innerClass="serif text-[8.4vw] italic leading-[1.02] text-fs-gold md:text-[3.3vw]">&mdash; and a family waiting.</MaskLine>
+          </p>
+          <p className="mt-5 max-w-[26rem] text-sm leading-relaxed text-ivory/75 md:text-base">
+            <MaskLine>Whoever you are and wherever you&rsquo;re coming from,</MaskLine>
+            <MaskLine>come and grow with {church.theme.value.toLowerCase()}.</MaskLine>
+          </p>
         </div>
-        <div className="max-w-[40%] text-right">
-          <MaskLine innerClass="eyebrow">{church.address.value.replace(', Nigeria', '')}</MaskLine>
+        <div className="h-cta mt-7 flex flex-wrap items-center gap-3">
+          <a href="#visit" className="rounded-full bg-fs-gold px-5 py-3 text-sm font-semibold text-ink transition-colors hover:bg-ivory">
+            Plan a visit
+          </a>
+          <a href="#services" className="rounded-full border border-ivory/40 px-5 py-3 text-sm text-ivory backdrop-blur-sm transition-colors hover:bg-ivory hover:text-ink">
+            Service times
+          </a>
+        </div>
+      </div>
+
+      <span className="h-credit eyebrow absolute bottom-16 right-5 z-10 hidden text-[0.6rem] text-ivory/55 md:right-10 md:block">
+        <span className="mr-2 inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-[#d82820] align-middle" />
+        Filmed at District Convocation 2026
+      </span>
+
+      {/* Programme ticker */}
+      <div className="h-ticker absolute inset-x-0 bottom-0 z-10 overflow-hidden border-t border-ivory/15 bg-ink/35 py-3 backdrop-blur-md">
+        <div className="marquee-track flex w-max animate-[marquee_60s_linear_infinite]">
+          {[0, 1].map((copy) => (
+            <div key={copy} className="flex shrink-0 items-center" aria-hidden={copy === 1}>
+              {TICKER.map((t, i) => (
+                <span key={t} className="eyebrow flex items-center whitespace-nowrap text-[0.62rem] text-ivory/80 md:text-[0.68rem]">
+                  <span className="px-6">{t}</span>
+                  <span className="inline-block h-2 w-2" style={{ background: EMBLEM_COLORS[EMBLEM_ORDER[i % 4]] }} />
+                </span>
+              ))}
+            </div>
+          ))}
         </div>
       </div>
 

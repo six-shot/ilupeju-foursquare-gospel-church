@@ -44,7 +44,7 @@ export const images = {
   sermon: { src: '/images/sermon-poster.jpg', video: '/videos/sermon.mp4', label: 'Featured sermon', shape: 'landscape', note: 'Our pastor preaching at the pulpit (District Convocation 2026, IMG_1500). Grows to full screen.' },
   event1: { src: null, label: 'Event — District Convocation', shape: 'landscape', note: '' },
   event2: { src: null, label: 'Event — Grand Finale', shape: 'landscape', note: '' },
-  event3: { src: null, label: 'Event — next event', shape: 'landscape', note: '' },
+  event3: { src: null, label: 'Event — National Convention', shape: 'landscape', note: '' },
   visit: { src: null, label: 'Visit us background', shape: 'landscape', note: 'Warm, joyful worship.' },
 } satisfies Record<string, ImageSlot>;
 
