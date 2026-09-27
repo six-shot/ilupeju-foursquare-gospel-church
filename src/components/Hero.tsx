@@ -3,23 +3,14 @@
 import { useRef } from 'react';
 import { gsap, useGSAP } from '@/lib/gsap';
 import { Chars, Frame, MaskLine } from './ui';
-import { church, events, services } from '@/content/church';
-import { EMBLEM_COLORS, EMBLEM_ORDER } from './Emblem';
-
-// Programme ticker: the weekly services, where we are, and what's coming up.
-const TICKER = [
-  ...services.map((s) => `${s.day} · ${s.name.replace(' — ', ': ')} · ${s.time}`),
-  church.address.value.replace(', Nigeria', ''),
-  ...events.filter((e) => e.verified).slice(0, 1).map((e) => `${e.title} · ${e.date}`),
-];
+import { church } from '@/content/church';
 
 /**
  * Cinematic opening, pinned for ~1.3 screens. Only transforms and opacity are animated
  * (no blur / clip-path on large layers) so it stays smooth on every device.
  *  - intro (after the loader): the photo settles from a slight push-in, letters rise into place
  *  - scroll: the photo eases back while each letter drifts up at its own pace and fades,
- *    and the title shade lifts — ending on the clear, full-screen photo, which is exactly
- *    where the Story section begins.
+ *    and the title shade lifts — ending on the clear, full-screen film.
  */
 export default function Hero() {
   const root = useRef<HTMLElement>(null);
@@ -38,7 +29,6 @@ export default function Hero() {
         .from(q('.h-scroll'), { opacity: 0, y: 20, duration: 1 }, 1.1)
         .to(q('.h-welcome .line-inner'), { yPercent: 0, duration: 1.3, stagger: 0.09 }, 0.55)
         .from(q('.h-cta > *'), { opacity: 0, y: 24, duration: 1, stagger: 0.08 }, 1.0)
-        .from(q('.h-ticker'), { opacity: 0, yPercent: 100, duration: 1.1 }, 1.05)
         .from(q('.h-credit'), { opacity: 0, duration: 1 }, 1.4);
 
       const play = () => intro.play();
@@ -59,7 +49,7 @@ export default function Hero() {
           ease: 'power1.in',
         }, 0)
         .to(q('.h-sub'), { y: -70, opacity: 0, duration: 0.45 }, 0)
-        .to(q('.h-ticker, .h-scroll, .h-credit'), { opacity: 0, duration: 0.25 }, 0)
+        .to(q('.h-scroll, .h-credit'), { opacity: 0, duration: 0.25 }, 0)
         .to(q('.h-welcome, .h-cta'), { y: -90, opacity: 0, duration: 0.45 }, 0)
         .to(q('.h-title-shade'), { opacity: 0, duration: 0.7 }, 0.1)
         .to(q('.h-flat-shade'), { opacity: 1, duration: 0.7 }, 0.1);
@@ -83,7 +73,7 @@ export default function Hero() {
           priority
         />
       </div>
-      {/* Legibility shade under the title; hands over to the flat shade the Story section starts with */}
+      {/* Legibility shades under the text; they lift as you scroll, leaving the clear film */}
       <div className="h-title-shade pointer-events-none absolute inset-0 bg-gradient-to-b from-ink/45 via-transparent to-ink/85" />
       <div className="h-title-shade pointer-events-none absolute inset-0 bg-gradient-to-r from-ink/60 via-ink/15 to-transparent" />
       <div className="h-flat-shade pointer-events-none absolute inset-0 bg-ink/35 opacity-0" />
@@ -103,7 +93,8 @@ export default function Hero() {
       {/* Welcome */}
       <div className="h-welcome-wrap absolute left-5 right-5 top-[15svh] z-10 max-w-[34rem] md:left-10 md:top-[22svh]">
         <div className="h-welcome text-ivory">
-          <MaskLine innerClass="eyebrow text-fs-gold">Welcome home</MaskLine>
+          <MaskLine innerClass="eyebrow text-[0.62rem] text-ivory/70">2026 · Our year of <span className="text-fs-gold">{church.yearTheme.value}</span></MaskLine>
+          <MaskLine innerClass="eyebrow mt-3 text-fs-gold">Welcome home</MaskLine>
           <p className="mt-4">
             <MaskLine innerClass="serif text-[8.4vw] leading-[1.02] md:text-[3.3vw]">There&rsquo;s a seat saved for you</MaskLine>
             <MaskLine innerClass="serif text-[8.4vw] italic leading-[1.02] text-fs-gold md:text-[3.3vw]">&mdash; and a family waiting.</MaskLine>
@@ -123,26 +114,10 @@ export default function Hero() {
         </div>
       </div>
 
-      <span className="h-credit eyebrow absolute bottom-16 right-5 z-10 hidden text-[0.6rem] text-ivory/55 md:right-10 md:block">
+      <span className="h-credit eyebrow absolute bottom-5 right-5 z-10 hidden text-[0.6rem] text-ivory/55 md:right-10 md:block">
         <span className="mr-2 inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-[#d82820] align-middle" />
         Filmed at District Convocation 2026
       </span>
-
-      {/* Programme ticker */}
-      <div className="h-ticker absolute inset-x-0 bottom-0 z-10 overflow-hidden border-t border-ivory/15 bg-ink/35 py-3 backdrop-blur-md">
-        <div className="marquee-track flex w-max animate-[marquee_60s_linear_infinite]">
-          {[0, 1].map((copy) => (
-            <div key={copy} className="flex shrink-0 items-center" aria-hidden={copy === 1}>
-              {TICKER.map((t, i) => (
-                <span key={t} className="eyebrow flex items-center whitespace-nowrap text-[0.62rem] text-ivory/80 md:text-[0.68rem]">
-                  <span className="px-6">{t}</span>
-                  <span className="inline-block h-2 w-2" style={{ background: EMBLEM_COLORS[EMBLEM_ORDER[i % 4]] }} />
-                </span>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
 
       <div className="h-scroll absolute right-5 top-1/2 z-10 hidden -translate-y-1/2 flex-col items-center gap-3 md:right-10 md:flex">
         <span className="eyebrow text-[0.62rem] text-ivory/70 [writing-mode:vertical-rl]">Scroll</span>

@@ -1,11 +1,10 @@
 import Loader from '@/components/Loader';
 import SmoothScroll from '@/components/SmoothScroll';
 import Nav from '@/components/Nav';
+import Ticker from '@/components/Ticker';
 import Hero from '@/components/Hero';
-import Story from '@/components/Story';
-import Identity from '@/components/Identity';
+import YearTheme from '@/components/YearTheme';
 import Foursquare from '@/components/Foursquare';
-import Pastors from '@/components/Pastors';
 import Life from '@/components/Life';
 import Media from '@/components/Media';
 import Events from '@/components/Events';
@@ -19,15 +18,11 @@ export default function Home() {
       <SmoothScroll />
       <Loader />
       <Nav />
+      <Ticker />
       <main id="top">
         <Hero />
-        {/* Story overlaps the hero's final screen so the hand-over is seamless */}
-        <div className="relative z-10 -mt-[100svh]">
-          <Story />
-        </div>
-        <Identity />
+        <YearTheme />
         <Foursquare />
-        <Pastors />
         <Life />
         <Media />
         <Events />

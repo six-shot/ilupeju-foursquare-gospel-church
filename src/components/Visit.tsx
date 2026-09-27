@@ -59,7 +59,7 @@ export default function Visit() {
         <Chars text="Leave changed." className="serif text-[16vw] italic leading-none text-fs-gold md:text-[12vw]" />
       </div>
 
-      <div className="vs-card absolute inset-x-4 bottom-[6svh] bg-ivory p-6 text-ink md:inset-x-auto md:bottom-[9svh] md:left-1/2 md:w-[min(920px,80vw)] md:-translate-x-1/2 md:p-10">
+      <div className="vs-card absolute inset-x-4 bottom-[10svh] bg-ivory p-6 text-ink md:inset-x-auto md:bottom-[12svh] md:left-1/2 md:w-[min(920px,80vw)] md:-translate-x-1/2 md:p-10">
         <div className="vs-info grid gap-6 md:grid-cols-[1.3fr_1fr] md:gap-10">
           <div>
             <span className="line-mask"><span className="line-inner eyebrow text-ink/50">Visit us</span></span>

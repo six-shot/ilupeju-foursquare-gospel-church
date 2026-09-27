@@ -35,6 +35,11 @@ export const church = {
     { label: 'Facebook', href: 'https://www.facebook.com/foursquareilupeju/', verified: true },
     // TODO: add Instagram / YouTube handles once the church confirms them.
   ],
+  yearTheme: {
+    value: 'Divine Honour and Dignity',
+    verified: true,
+    source: 'Roll-up banner at District Convocation 2026: "Our Year of Divine Honour and Dignity"',
+  },
   theme: {
     value: 'A New Class of People',
     verified: true,
@@ -118,47 +123,24 @@ export const sermons: {
  */
 export const events = [
   {
-    kicker: 'The Foursquare Gospel Church in Nigeria',
+    status: 'Upcoming',
+    kicker: 'The Foursquare Gospel Church in Nigeria · 71st Annual Convention',
     title: 'National Convention 2026',
     theme: 'Breaking New Grounds',
     date: '7–11 October 2026',
     dateMain: '7–11 Oct',
     dateSub: '2026',
-    detail: 'Foursquare Camp, Ajebo, Ogun State.',
+    detail: 'Foursquare Camp, KM 75 Lagos–Ibadan Expressway, Ajebo, Ogun State.',
     image: 'event3' as ImageKey,
-    verified: true, // foursquarenigconvention.com lists "October 7-11, 2026"
-  },
-  {
-    kicker: 'Ilupeju Missionary District',
-    title: 'District Convocation 2026',
-    theme: 'New Height',
-    date: '25–27 September 2026',
-    dateMain: '25–27 Sept',
-    dateSub: '2026',
-    detail: 'A night vigil of worship, prayer and the Word, followed by the Grand Finale.',
-    image: 'event1' as ImageKey,
-    verified: true,
-  },
-  {
-    kicker: 'District Convocation 2026',
-    title: 'The Grand Finale',
-    theme: 'New Height',
-    date: '27 September 2026',
-    dateMain: '27 Sept',
-    dateSub: '2026',
-    detail: 'The closing gathering of the convocation.',
-    image: 'event2' as ImageKey,
-    verified: true,
+    verified: true, // foursquarenigconvention.com + official flyer: Wed 7 – Sun 11 October 2026
   },
 ];
 
 export const nav = [
-  { label: 'Story', href: '#story' },
-  { label: 'Identity', href: '#identity' },
+  { label: '2026 Theme', href: '#theme' },
   { label: 'Life', href: '#life' },
   { label: 'Media', href: '#media' },
   { label: 'Events', href: '#events' },
-  { label: 'Pastors', href: '#pastors' },
   { label: 'Services', href: '#services' },
   { label: 'Visit', href: '#visit' },
 ];

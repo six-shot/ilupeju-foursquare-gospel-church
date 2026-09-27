@@ -20,13 +20,6 @@ export type ImageSlot = {
 
 export const images = {
   heroBackground: { src: '/images/hero-wide-poster.jpg', srcMobile: '/images/hero-tall-poster.jpg', video: '/videos/hero-wide.mp4', videoMobile: '/videos/hero-tall.mp4', label: 'Hero background', shape: 'landscape', note: 'Looping film: choir beneath the cross, then the celebration (District Convocation 2026, IMG_1509 / 1700 / 1699). Posters are its first frames.' },
-  storyPill1: { src: null, video: '/videos/pill-1.mp4', label: 'Story — pill 1', shape: 'landscape', note: 'Looping clip (District Convocation 2026 vigil).' },
-  storyPill2: { src: null, video: '/videos/pill-2.mp4', label: 'Story — pill 2', shape: 'landscape', note: 'Looping clip (District Convocation 2026 vigil).' },
-  identity1: { src: null, label: 'Identity 1', shape: 'portrait', note: 'Prayer.' },
-  identity2: { src: null, label: 'Identity 2', shape: 'portrait', note: 'Praise / clapping.' },
-  identity3: { src: null, label: 'Identity 3', shape: 'portrait', note: 'Youth.' },
-  identity4: { src: null, label: 'Identity 4', shape: 'portrait', note: 'Music / instruments.' },
-  identityReveal: { src: null, label: 'Identity → Beliefs', shape: 'landscape', note: 'Choir or sanctuary; fills the screen.' },
   lifeWorship: { src: '/images/life-worship-poster.jpg', video: '/videos/life-worship.mp4', label: 'Life — Worship', shape: 'portrait', note: 'Woman in yellow worshipping (District Convocation 2026, IMG_1471).' },
   lifePrayer: { src: '/images/life-prayer-poster.jpg', video: '/videos/life-prayer.mp4', label: 'Life — Prayer', shape: 'portrait', note: 'Woman in green praying (District Convocation 2026 vigil, IMG_1465).' },
   lifePraise: { src: '/images/life-praise-poster.jpg', video: '/videos/life-praise.mp4', label: 'Life — Praise', shape: 'portrait', note: 'Dancing in praise (District Convocation 2026, IMG_1679).' },
@@ -42,10 +35,8 @@ export const images = {
   pastorFemi: { src: '/images/pastor-femi.jpg', label: 'Rev. Dr. Femi Ogbonmide', shape: 'portrait', note: 'Frame from a Foursquare Grand Assembly Ilupeju YouTube short (qBqjY_truKI). Replace with an official portrait when available.' },
   pastorYinka: { src: '/images/pastor-yinka.jpg', label: 'Pst. Mrs. Yinka Ogbonmide', shape: 'portrait', note: 'Frame from a Foursquare Grand Assembly Ilupeju YouTube short (IH0-tNVkFlQ). Replace with an official portrait when available.' },
   sermon: { src: '/images/sermon-poster.jpg', video: '/videos/sermon.mp4', label: 'Featured sermon', shape: 'landscape', note: 'Our pastor preaching at the pulpit (District Convocation 2026, IMG_1500). Grows to full screen.' },
-  event1: { src: null, label: 'Event — District Convocation', shape: 'landscape', note: '' },
-  event2: { src: null, label: 'Event — Grand Finale', shape: 'landscape', note: '' },
-  event3: { src: null, label: 'Event — National Convention', shape: 'landscape', note: '' },
-  visit: { src: null, label: 'Visit us background', shape: 'landscape', note: 'Warm, joyful worship.' },
+  event3: { src: '/images/event-convention-2026.jpg', label: 'Event — National Convention', shape: 'landscape', note: 'Official 71st Annual Convention flyer (foursquarenigconvention.com).' },
+  visit: { src: '/images/visit-sanctuary.jpg', label: 'Visit us background', shape: 'landscape', note: 'Our sanctuary, full for the District Convocation 2026 (IMG_1573). Replace with an outside photo of the church building when available.' },
 } satisfies Record<string, ImageSlot>;
 
 export type ImageKey = keyof typeof images;

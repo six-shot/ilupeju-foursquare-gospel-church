@@ -30,7 +30,7 @@ export default function Footer() {
 
   const year = new Date().getFullYear();
   return (
-    <footer ref={root} className="relative overflow-hidden bg-ink px-5 pt-24 text-ivory md:px-10 md:pt-32">
+    <footer ref={root} className="relative overflow-hidden bg-ink px-5 pb-12 pt-24 text-ivory md:px-10 md:pt-32">
       <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr] md:gap-8">
         <div className="ft-col">
           <Emblem className="ft-mark h-16 w-16" colored />

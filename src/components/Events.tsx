@@ -60,7 +60,7 @@ export default function Events() {
 
   return (
     <section id="events" ref={root} className="relative h-svh w-full overflow-hidden bg-ink" aria-label="Events">
-      <div className="absolute left-5 top-6 z-40 md:left-10 md:top-8">
+      <div className="absolute left-5 top-24 z-40 md:left-10 md:top-28">
         <span className="eyebrow text-ivory/70">Events</span>
       </div>
       {events.map((ev, i) => (
@@ -74,6 +74,11 @@ export default function Events() {
               {ev.dateMain}
               <div className="serif text-[6vw] italic normal-case tracking-normal text-fs-gold md:text-[3.2vw]">{ev.dateSub}</div>
             </div>
+            <span className="line-mask mb-3">
+              <span className={`line-inner eyebrow inline-block rounded-full px-3 py-1.5 text-[0.62rem] ${ev.status === 'Upcoming' ? 'bg-fs-gold text-ink' : 'border border-ivory/40 text-ivory/80'}`}>
+                {ev.status}
+              </span>
+            </span>
             <span className="line-mask"><span className="line-inner eyebrow text-fs-gold">{ev.kicker}</span></span>
             <h3 className="mt-3">
               <span className="line-mask"><span className="line-inner display text-[13vw] text-ivory md:text-[7.5vw]">{ev.title}</span></span>
