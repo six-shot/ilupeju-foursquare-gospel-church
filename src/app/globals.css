@@ -1,26 +1,145 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
+/* ------------------------------------------------------------------ tokens */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ink: #0d0c0a;
+  --ink-2: #16140f;
+  --ivory: #f3ede3;
+  --ivory-2: #e6dccb;
+  --muted: #8f877a;
+  /* Foursquare mark colours — used sparingly as accents */
+  --fs-red: #b3221b;
+  --fs-blue: #0a6db5;
+  --fs-gold: #f6b826;
+  --fs-purple: #352c63;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ivory: var(--ivory);
+  --color-ivory-2: var(--ivory-2);
+  --color-muted: var(--muted);
+  --color-fs-red: var(--fs-red);
+  --color-fs-blue: var(--fs-blue);
+  --color-fs-gold: var(--fs-gold);
+  --color-fs-purple: var(--fs-purple);
+  --font-serif: var(--font-instrument), Georgia, serif;
+  --font-sans: var(--font-inter-tight), system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ------------------------------------------------------------------- base */
+html {
+  background: var(--ink);
+  color: var(--ivory);
+  font-family: var(--font-inter-tight), system-ui, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  background: var(--ink);
+  overflow-x: clip;
+}
+::selection {
+  background: var(--fs-gold);
+  color: var(--ink);
+}
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+@layer components {
+/* ------------------------------------------------------------ typography */
+.display {
+  font-family: var(--font-inter-tight), system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 0.82;
+  text-transform: uppercase;
+}
+.serif {
+  font-family: var(--font-instrument), Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+/* Masked lines: children slide within an overflow-hidden line box. */
+.line-mask {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
+}
+.line-mask > * {
+  display: block;
+  will-change: transform;
+}
+
+/* ----------------------------------------------------------------- grain */
+.grain {
+  pointer-events: none;
+  position: fixed;
+  inset: -50%;
+  z-index: 60;
+  opacity: 0.08;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  animation: grain 1.2s steps(6) infinite;
+  mix-blend-mode: overlay;
+}
+@keyframes grain {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-6%, 4%); }
+  40% { transform: translate(4%, -7%); }
+  60% { transform: translate(-3%, 8%); }
+  80% { transform: translate(7%, -2%); }
+  100% { transform: translate(0, 0); }
+}
+
+/* Image frames used by scroll animations */
+.frame {
+  overflow: hidden;
+}
+.frame > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: transform;
+}
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grain {
+    animation: none;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Scroll cue in the hero */
+@keyframes scrollcue {
+  0% { transform: translateY(-100%); }
+  60% { transform: translateY(200%); }
+  100% { transform: translateY(200%); }
+}
+html.is-loading body {
+  overflow: hidden;
 }

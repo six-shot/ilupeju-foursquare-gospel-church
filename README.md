@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ilupeju Foursquare Gospel Church — website
 
-## Getting Started
-
-First, run the development server:
+A scroll-driven, cinematic one-page site. Next.js 16 · TypeScript · Tailwind CSS 4 · GSAP + ScrollTrigger · Lenis · Motion.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000
+npm run build && npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Adding the photos
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Every photo on the site is a named slot in **`src/content/images.ts`**. All slots are placeholders for now
+("Photo coming soon"). To use a photo:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Put the file in `public/images/` (e.g. `public/images/hero.jpg`).
+2. Set that slot's `src` to `'/images/hero.jpg'`.
 
-## Learn More
+Each slot lists the recommended orientation (`shape`) and what works best there (`note`).
 
-To learn more about Next.js, take a look at the following resources:
+## Editing content
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Everything else the church may want to change lives in **`src/content/church.ts`**:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| What | Where | Status |
+|---|---|---|
+| Name, address, phone, email, Facebook | `church` | Verified from the church's Facebook page (facebook.com/foursquareilupeju) |
+| Theme — "A New Class of People" | `church.theme` | Provided by the church |
+| Service times | `services` | **Not verified — empty.** Add entries; they appear in the Visit section. Until then visitors are asked to call/email. |
+| Leadership | `leadership` | **Not verified — empty.** |
+| Church-life gallery | `life` | Generic labels (Worship, Prayer, Music…) — rename to the church's real ministries when confirmed. |
+| Sermons | `sermons` | **Not verified — empty.** The featured slot links to the Facebook page until real sermons are added. |
+| Events | `events` | District Convocation 2026 ("New Height"). Entries with `verified: false` are hidden. |
 
-## Deploy on Vercel
+## Brand assets
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `src/content/emblem.ts`, `public/brand/emblem/*.svg` — the official Foursquare emblem (cross, cup, dove, crown),
+  traced from the logo on foursquare.org.ng (`scripts/trace-emblem.mjs`) and split into its four symbols for animation.
+  Colours (red cross, blue cup, gold dove, purple crown) sampled from the official colour icon.
+- `public/brand/foursquare-nigeria-logo-white.png` — official Foursquare Gospel Church in Nigeria logo (foursquare.org.ng).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Motion
+
+Each section is a pinned, scrubbed GSAP timeline (described at the top of each file in `src/components/`).
+Lenis drives smooth scrolling from GSAP's ticker (`SmoothScroll.tsx`); `prefers-reduced-motion` turns it off.
+
+Dev tool: `node scripts/capture.mjs [url] [width] [height]` screenshots the page at scroll steps into `research/qc/`.
