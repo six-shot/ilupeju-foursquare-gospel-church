@@ -26,7 +26,6 @@ export const images = {
   lifeMusic: { src: '/images/life-music-poster.jpg', video: '/videos/life-music.mp4', label: 'Life — Music', shape: 'portrait', note: 'The choir beneath the cross (District Convocation 2026, IMG_1514).' },
   lifeWord: { src: '/images/life-word-poster.jpg', video: '/videos/life-word.mp4', label: 'Life — The Word', shape: 'portrait', note: 'The pastor preaching at the pulpit (District Convocation 2026, IMG_1500).' },
   lifeSundaySchool: { src: '/images/life-sunday-school-poster.jpg', video: '/videos/life-sunday-school.mp4', label: 'Life — Sunday School', shape: 'portrait', note: 'Young people leading at the front (IMG_1349).' },
-  lifeHouseFellowship: { src: null, label: 'Life — House Fellowship', shape: 'portrait', note: '' },
   lifeChildren: { src: '/images/life-children-poster.jpg', video: '/videos/life-children.mp4', label: 'Life — Children', shape: 'portrait', note: 'A little girl dancing (District Convocation 2026, IMG_1698).' },
   lifeTeens: { src: '/images/life-teens-poster.jpg', video: '/videos/life-teens.mp4', label: 'Life — Teens', shape: 'portrait', note: 'Teenagers leading songs (District Convocation 2026, IMG_1712).' },
   lifeYouth: { src: '/images/life-youth-poster.jpg', video: '/videos/life-youth.mp4', label: 'Life — Youth', shape: 'portrait', note: 'Youth worshipping (District Convocation 2026, IMG_1728).' },
@@ -35,7 +34,7 @@ export const images = {
   pastorFemi: { src: '/images/pastor-femi.jpg', label: 'Rev. Dr. Femi Ogbonmide', shape: 'portrait', note: 'Frame from a Foursquare Grand Assembly Ilupeju YouTube short (qBqjY_truKI). Replace with an official portrait when available.' },
   pastorYinka: { src: '/images/pastor-yinka.jpg', label: 'Pst. Mrs. Yinka Ogbonmide', shape: 'portrait', note: 'Frame from a Foursquare Grand Assembly Ilupeju YouTube short (IH0-tNVkFlQ). Replace with an official portrait when available.' },
   sermon: { src: '/images/sermon-poster.jpg', video: '/videos/sermon.mp4', label: 'Featured sermon', shape: 'landscape', note: 'Our pastor preaching at the pulpit (District Convocation 2026, IMG_1500). Grows to full screen.' },
-  event3: { src: '/images/event-convention-2026.jpg', label: 'Event — National Convention', shape: 'landscape', note: 'Official 71st Annual Convention flyer (foursquarenigconvention.com).' },
+  event3: { src: '/images/event-convention-2026.jpg', srcMobile: '/images/event-convention-2026-tall.jpg', label: 'Event — National Convention', shape: 'landscape', note: 'Official 71st Annual Convention flyer (foursquarenigconvention.com).' },
   visit: { src: '/images/visit-sanctuary.jpg', label: 'Visit us background', shape: 'landscape', note: 'Our sanctuary, full for the District Convocation 2026 (IMG_1573). Replace with an outside photo of the church building when available.' },
 } satisfies Record<string, ImageSlot>;
 

@@ -99,7 +99,6 @@ export const life = [
   { title: 'Music', line: 'Voices raised as one choir.', image: 'lifeMusic' as ImageKey },
   { title: 'The Word', line: 'Rightly dividing the truth.', image: 'lifeWord' as ImageKey },
   { title: 'Sunday School', line: 'Studying the Scriptures together.', image: 'lifeSundaySchool' as ImageKey },
-  { title: 'House Fellowship', line: 'Church in our homes, all week long.', image: 'lifeHouseFellowship' as ImageKey },
   { title: 'Children', line: 'Joy that cannot be contained.', image: 'lifeChildren' as ImageKey },
   { title: 'Teens', line: 'Growing up in the faith.', image: 'lifeTeens' as ImageKey },
   { title: 'Youth', line: 'A generation rising for God.', image: 'lifeYouth' as ImageKey },

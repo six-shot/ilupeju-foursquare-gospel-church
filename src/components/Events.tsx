@@ -37,7 +37,7 @@ export default function Events() {
       tl.fromTo(slides[0].querySelector('.ev-img'), { clipPath: 'inset(22% 22% 22% 22% round 16px)' }, {
         clipPath: 'inset(0% 0% 0% 0% round 0px)', duration: 0.8, ease: 'power2.inOut',
       }, 0)
-        .fromTo(slides[0].querySelector('.ev-img img'), { scale: 1.35 }, { scale: 1.05, duration: 0.8, ease: 'power2.inOut' }, 0)
+        .fromTo(slides[0].querySelectorAll('.ev-img img, .ev-img video'), { scale: 1.35 }, { scale: 1.05, duration: 0.8, ease: 'power2.inOut' }, 0)
         .to(slides[0].querySelector('.ev-date'), { xPercent: 0, opacity: 1, duration: 0.6, ease: 'power3.out' }, 0.35)
         .to(slides[0].querySelectorAll('.line-inner'), { yPercent: 0, duration: 0.45, stagger: 0.06, ease: 'power3.out' }, 0.45);
 
@@ -47,9 +47,9 @@ export default function Events() {
         const at = 1.3 + (i - 1) * 1.3;
         tl.to(prev.querySelectorAll('.line-inner'), { yPercent: -115, duration: 0.35, stagger: 0.03, ease: 'power2.in' }, at)
           .to(prev.querySelector('.ev-date'), { xPercent: -40, opacity: 0, duration: 0.45, ease: 'power2.in' }, at)
-          .to(prev.querySelector('.ev-img img'), { scale: 1.2, yPercent: -8, duration: 0.8 }, at)
+          .to(prev.querySelectorAll('.ev-img img, .ev-img video'), { scale: 1.2, yPercent: -8, duration: 0.8 }, at)
           .to(s.querySelector('.ev-img'), { clipPath: 'inset(0% 0% 0% 0%)', duration: 0.75, ease: 'power3.inOut' }, at + 0.1)
-          .fromTo(s.querySelector('.ev-img img'), { scale: 1.3, yPercent: 8 }, { scale: 1.05, yPercent: 0, duration: 0.9, ease: 'power2.out' }, at + 0.1)
+          .fromTo(s.querySelectorAll('.ev-img img, .ev-img video'), { scale: 1.3, yPercent: 8 }, { scale: 1.05, yPercent: 0, duration: 0.9, ease: 'power2.out' }, at + 0.1)
           .to(s.querySelector('.ev-date'), { xPercent: 0, opacity: 1, duration: 0.6, ease: 'power3.out' }, at + 0.45)
           .to(s.querySelectorAll('.line-inner'), { yPercent: 0, duration: 0.45, stagger: 0.06, ease: 'power3.out' }, at + 0.55);
       });

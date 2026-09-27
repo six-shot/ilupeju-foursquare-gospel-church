@@ -38,7 +38,7 @@ export default function Hero() {
       const chars = q('.h-char');
       const tl = gsap.timeline({
         defaults: { ease: 'none' },
-        scrollTrigger: { trigger: root.current, start: 'top top', end: '+=130%', scrub: 0.8, pin: true, anticipatePin: 1 },
+        scrollTrigger: { trigger: root.current, start: 'top top', end: '+=90%', scrub: 0.8, pin: true, anticipatePin: 1 },
       });
       tl.to(q('.h-bg'), { scale: 1, duration: 1 }, 0)
         .to(chars, {
@@ -97,7 +97,7 @@ export default function Hero() {
           <MaskLine innerClass="eyebrow mt-3 text-fs-gold">Welcome home</MaskLine>
           <p className="mt-4">
             <MaskLine innerClass="serif text-[8.4vw] leading-[1.02] md:text-[3.3vw]">There&rsquo;s a seat saved for you</MaskLine>
-            <MaskLine innerClass="serif text-[8.4vw] italic leading-[1.02] text-fs-gold md:text-[3.3vw]">&mdash; and a family waiting.</MaskLine>
+            <MaskLine innerClass="serif text-[8.4vw] italic leading-[1.02] text-fs-gold md:text-[3.3vw]">and a family waiting.</MaskLine>
           </p>
           <p className="mt-5 max-w-[26rem] text-sm leading-relaxed text-ivory/75 md:text-base">
             <MaskLine>Whoever you are and wherever you&rsquo;re coming from,</MaskLine>

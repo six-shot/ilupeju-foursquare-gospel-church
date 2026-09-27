@@ -100,7 +100,7 @@ export default function Life() {
             </span>
             <div className="absolute inset-x-5 bottom-5 md:inset-x-8 md:bottom-8">
               <h3 className="lf-title">
-                <span className="line-mask"><span className="line-inner display text-[13vw] text-ivory md:text-[5.4vw]">{item.title}</span></span>
+                <span className="line-mask"><span className="line-inner display text-[9.5vw] leading-[0.92] text-ivory md:text-[4.6vw]">{item.title}</span></span>
               </h3>
               <p className="lf-line mt-1">
                 <span className="line-mask"><span className="line-inner serif text-xl italic text-ivory/85 md:text-2xl">{item.line}</span></span>
