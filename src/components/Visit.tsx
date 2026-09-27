@@ -70,17 +70,12 @@ export default function Visit() {
             <span className="line-mask mt-4"><span className="line-inner text-ink/70">{church.address.value}</span></span>
           </div>
           <div className="flex flex-col justify-end gap-3 text-sm">
-            {services.length > 0 ? (
-              services.map((s) => (
-                <span key={s.name} className="line-mask">
-                  <span className="line-inner flex justify-between border-b border-ink/15 pb-2">
-                    <span>{s.day} · {s.name}</span><span className="font-semibold">{s.time}</span>
-                  </span>
-                </span>
-              ))
-            ) : (
-              <span className="line-mask"><span className="line-inner text-ink/70">For service times, call or email the church:</span></span>
-            )}
+            <span className="line-mask">
+              <span className="line-inner flex justify-between border-b border-ink/15 pb-2">
+                <span>Sundays · First Service</span><span className="font-semibold">{services[0]?.time}</span>
+              </span>
+            </span>
+            <span className="line-mask"><span className="line-inner text-ink/60"><a href="#services" className="underline decoration-fs-gold underline-offset-4">All service times</a></span></span>
             <span className="line-mask"><span className="line-inner"><a className="font-semibold underline decoration-fs-gold underline-offset-4" href={`tel:${church.phone.value.replace(/\s/g, '')}`}>{church.phone.value}</a></span></span>
             <span className="line-mask"><span className="line-inner"><a className="underline decoration-fs-gold underline-offset-4" href={`mailto:${church.email.value}`}>{church.email.value}</a></span></span>
             <span className="line-mask mt-2">

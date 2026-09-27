@@ -9,6 +9,7 @@ import Pastors from '@/components/Pastors';
 import Life from '@/components/Life';
 import Media from '@/components/Media';
 import Events from '@/components/Events';
+import Services from '@/components/Services';
 import Visit from '@/components/Visit';
 import Footer from '@/components/Footer';
 
@@ -30,6 +31,7 @@ export default function Home() {
         <Life />
         <Media />
         <Events />
+        <Services />
         <Visit />
       </main>
       <Footer />

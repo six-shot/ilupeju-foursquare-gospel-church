@@ -41,7 +41,7 @@ export const images = {
   lifeCelebration: { src: '/images/life-celebration-poster.jpg', video: '/videos/life-celebration.mp4', label: 'Life — Celebration', shape: 'portrait', note: 'Jumping and dancing (District Convocation 2026, IMG_1701).' },
   pastorFemi: { src: '/images/pastor-femi.jpg', label: 'Rev. Dr. Femi Ogbonmide', shape: 'portrait', note: 'Frame from a Foursquare Grand Assembly Ilupeju YouTube short (qBqjY_truKI). Replace with an official portrait when available.' },
   pastorYinka: { src: '/images/pastor-yinka.jpg', label: 'Pst. Mrs. Yinka Ogbonmide', shape: 'portrait', note: 'Frame from a Foursquare Grand Assembly Ilupeju YouTube short (IH0-tNVkFlQ). Replace with an official portrait when available.' },
-  sermon: { src: null, label: 'Featured sermon', shape: 'landscape', note: 'The preacher / pulpit; grows to full screen.' },
+  sermon: { src: '/images/sermon-poster.jpg', video: '/videos/sermon.mp4', label: 'Featured sermon', shape: 'landscape', note: 'Our pastor preaching at the pulpit (District Convocation 2026, IMG_1500). Grows to full screen.' },
   event1: { src: null, label: 'Event — District Convocation', shape: 'landscape', note: '' },
   event2: { src: null, label: 'Event — Grand Finale', shape: 'landscape', note: '' },
   event3: { src: null, label: 'Event — next event', shape: 'landscape', note: '' },

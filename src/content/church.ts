@@ -47,9 +47,15 @@ export const church = {
   },
 } as const;
 
-/** Service times could not be verified online — fill these in before launch. */
-export const services: { day: string; name: string; time: string }[] = [
-  // { day: 'Sunday', name: 'Worship Service', time: 'TODO' },
+/** Weekly programme — supplied by the church. */
+export const services: { day: string; name: string; time: string; note?: string }[] = [
+  { day: 'Sunday', name: 'First Service — The Next Gen Service', time: '7:30 – 9:30am' },
+  { day: 'Sunday', name: 'Sunday School', time: '9:30 – 10:10am' },
+  { day: 'Sunday', name: 'Second Service', time: '10:10am', note: 'Starts immediately after Sunday School' },
+  { day: 'Tuesday', name: 'Hour of Dominion', time: '6:30 – 7:30pm' },
+  { day: 'Wednesday', name: 'Digging Deep Bible Study', time: '6:30 – 8:00pm' },
+  // TODO: confirm the Thursday start time (supplied as "6::0pm").
+  { day: 'Thursday', name: 'Prayer Meeting', time: '6:30pm' },
 ];
 
 /**
@@ -153,5 +159,6 @@ export const nav = [
   { label: 'Media', href: '#media' },
   { label: 'Events', href: '#events' },
   { label: 'Pastors', href: '#pastors' },
+  { label: 'Services', href: '#services' },
   { label: 'Visit', href: '#visit' },
 ];

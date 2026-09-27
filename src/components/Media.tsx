@@ -32,7 +32,7 @@ export default function Media() {
           scrollTrigger: { trigger: root.current, start: 'top top', end: '+=220%', scrub: 1, pin: true, anticipatePin: 1 },
         });
         tl.fromTo(q('.md-head .line-inner'), { yPercent: 115 }, { yPercent: 0, duration: 0.35, stagger: 0.08, ease: 'power3.out' }, 0)
-          .fromTo(q('.md-frame img'), { scale: 1.4 }, { scale: 1.05, duration: 1.2, ease: 'power2.inOut' }, 0.35)
+          .fromTo(q('.md-frame img, .md-frame video'), { scale: 1.4 }, { scale: 1.05, duration: 1.2, ease: 'power2.inOut' }, 0.35)
           .to(q('.md-head'), { xPercent: -30, opacity: 0, filter: 'blur(6px)', duration: 0.6, ease: 'power2.in' }, 0.5)
           .to(q('.md-frame'), { clipPath: 'inset(0% 0% 0% 0% round 0px)', duration: 0.9, ease: 'power2.inOut' }, 0.45)
           .to(q('.md-shade'), { opacity: 1, duration: 0.6 }, 0.9)
@@ -56,7 +56,7 @@ export default function Media() {
       </div>
 
       <div className="md-frame absolute inset-0 z-20">
-        <Frame img={featured?.image ?? 'sermon'} alt="A minister at the pulpit" className="absolute inset-0" position="50% 72%" />
+        <Frame img={featured?.image ?? 'sermon'} alt="Our pastor preaching at the pulpit" className="absolute inset-0" position="50% 40%" />
         <div className="md-shade absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/40 to-ink/10 opacity-0" />
 
         <a
