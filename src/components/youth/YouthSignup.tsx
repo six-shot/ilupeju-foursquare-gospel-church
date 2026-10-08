@@ -19,7 +19,7 @@ function Label({ children, optional }: { children: ReactNode; optional?: boolean
   );
 }
 
-/** Where the bottom tear line sits, measured up from the bottom edge of the ticket. */
+/** Where the bottom pair of notches sits, measured up from the bottom edge of the ticket. */
 const TEAR = '8.5rem';
 
 /** Masks a notch out of both side edges at each given height (any CSS length or %). */
@@ -110,9 +110,6 @@ export default function YouthSignup() {
         </div>
 
         <div className="relative rounded-b-[28px] bg-ivory px-6 pb-8 pt-9 md:px-10" style={notch('0%', `calc(100% - ${TEAR})`)}>
-          {/* perforations: one under the stub, one above the tear-off strip that holds the button */}
-          <div className="absolute inset-x-11 top-0 border-t-2 border-dashed border-ink/30" aria-hidden />
-          <div className="absolute inset-x-11 border-t-2 border-dashed border-ink/30" style={{ bottom: TEAR }} aria-hidden />
           {status === 'done' ? (
             <div className="pt-6 text-center" role="status">
               <p className="text-5xl uppercase leading-none md:text-6xl" style={POSTER}>Thank you{firstName ? `, ${firstName}` : ''}</p>

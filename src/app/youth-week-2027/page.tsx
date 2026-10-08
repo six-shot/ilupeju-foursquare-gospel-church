@@ -21,7 +21,7 @@ export default function YouthWeekPage() {
       </main>
       <footer className="flex flex-col gap-3 border-t border-ivory/15 bg-ink px-5 py-8 text-xs text-ivory/50 md:flex-row md:items-center md:justify-between md:px-10">
         <Link href="/" className="underline decoration-fs-gold underline-offset-4">← {church.name.value}</Link>
-        <span>{church.address.value} · {church.phone.value}</span>
+        <span>{church.address.value}</span>
       </footer>
       <div className="grain" aria-hidden />
     </>

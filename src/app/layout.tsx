@@ -25,7 +25,6 @@ export const metadata: Metadata = {
   title: 'Ilupeju Foursquare Gospel Church',
   description:
     'Ilupeju Foursquare Gospel Church — 33 Iseyin Street, Palm Grove, Lagos. A new class of people.',
-  icons: { icon: '/brand/foursquare-mark.png' },
 };
 
 export const viewport: Viewport = {
