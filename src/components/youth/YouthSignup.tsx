@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, type FormEvent, type ReactNode } from 'react';
+import Confetti from './Confetti';
 import MerchCard from './MerchCard';
 import TicketSelect from './TicketSelect';
 import { ageRanges, attendance, merch, youthWeek, type MerchKey } from '@/content/youthWeek';
@@ -68,6 +69,12 @@ export default function YouthSignup() {
       if (!res.ok) throw new Error(json.error || 'Something went wrong. Please try again.');
       setFirstName(get('name').trim().split(/\s+/)[0]);
       setStatus('done');
+      // The ticket is much shorter once the form is gone, so bring it back into view.
+      requestAnimationFrame(() => {
+        const lenis = (window as unknown as { __lenis?: { resize: () => void; scrollTo: (t: string, o?: object) => void } }).__lenis;
+        if (lenis) { lenis.resize(); lenis.scrollTo('#signup', { duration: 0.9 }); }
+        else document.getElementById('signup')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
       setStatus('idle');
@@ -112,6 +119,7 @@ export default function YouthSignup() {
         <div className="relative rounded-b-[28px] bg-ivory px-6 pb-8 pt-9 md:px-10" style={notch('0%', `calc(100% - ${TEAR})`)}>
           {status === 'done' ? (
             <div className="pt-6 text-center" role="status">
+              <Confetti />
               <p className="text-5xl uppercase leading-none md:text-6xl" style={POSTER}>Thank you{firstName ? `, ${firstName}` : ''}</p>
               <p className="mx-auto mt-5 max-w-md leading-relaxed text-ink/65">
                 You are registered for Youth Week {youthWeek.year}, {youthWeek.dates}. Invite a friend to register too.
