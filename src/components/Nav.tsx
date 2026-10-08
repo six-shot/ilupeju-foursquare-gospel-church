@@ -22,16 +22,16 @@ export default function Nav() {
   return (
     <>
       <a href="#top" className="fixed left-5 top-5 z-50 md:left-10" aria-label={church.name.value}>
-        <Emblem className="h-8 w-8" colored />
+        <Emblem className="h-9 w-9" colored />
       </a>
       <header className="pointer-events-none fixed inset-x-0 top-0 z-50 flex items-center justify-between px-5 py-5 mix-blend-difference md:px-10">
-        <span className="eyebrow block pl-11 text-[0.62rem] leading-[1.35] text-ivory md:text-[0.66rem]">
-          Ilupeju Foursquare<br />Gospel Church
+        <span className="block pl-12 text-[0.95rem] font-medium leading-tight text-ivory">
+          Foursquare Gospel Church<br />Ilupeju, Lagos
         </span>
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="eyebrow pointer-events-auto ml-auto flex items-center gap-3 text-ivory"
+          className="pointer-events-auto ml-auto flex items-center gap-3 text-[0.95rem] font-medium text-ivory"
           aria-expanded={open}
           aria-controls="site-menu"
         >
@@ -59,13 +59,13 @@ export default function Nav() {
                   <motion.a
                     href={n.href}
                     onClick={() => setOpen(false)}
-                    className="display group flex items-baseline gap-4 text-[13vw] leading-[0.95] md:text-[7.5vw]"
+                    className="font-display group flex items-baseline gap-4 text-[11vw] font-semibold leading-[1.08] tracking-[-0.035em] md:text-[6vw]"
                     initial={{ y: '110%' }}
                     animate={{ y: '0%' }}
                     exit={{ y: '-110%' }}
                     transition={{ duration: 0.8, ease, delay: 0.15 + i * 0.05 }}
                   >
-                    <span className="serif text-base italic normal-case tracking-normal text-ink/40 md:text-xl">0{i + 1}</span>
+                    <span className="font-sans text-sm font-normal tracking-normal text-ink/40 md:text-base">0{i + 1}</span>
                     <span className="transition-transform duration-500 group-hover:translate-x-4">{n.label}</span>
                   </motion.a>
                 </li>

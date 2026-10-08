@@ -34,25 +34,25 @@ export default function Footer() {
       <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr] md:gap-8">
         <div className="ft-col">
           <Emblem className="ft-mark h-16 w-16" colored />
-          <p className="serif mt-6 max-w-sm text-3xl italic leading-tight">{church.theme.value}.</p>
+          <p className="font-display mt-6 max-w-sm text-3xl font-semibold leading-tight tracking-[-0.03em]">{church.theme.value}.</p>
         </div>
         <div className="ft-col text-sm">
-          <h4 className="eyebrow mb-4 text-muted">Visit</h4>
+          <h4 className="mb-3 text-ivory/50">Visit</h4>
           <p className="text-ivory/80">{church.address.value}</p>
-          <a href={church.mapsUrl} target="_blank" rel="noreferrer" className="mt-3 inline-block underline decoration-fs-gold underline-offset-4">Directions</a>
+          <a href={church.mapsUrl} target="_blank" rel="noreferrer" className="mt-3 inline-block underline decoration-ivory/40 underline-offset-4 hover:decoration-ivory">Directions</a>
         </div>
         <div className="ft-col text-sm">
-          <h4 className="eyebrow mb-4 text-muted">Contact</h4>
+          <h4 className="mb-3 text-ivory/50">Contact</h4>
           <a className="block text-ivory/80 hover:text-ivory" href={`tel:${church.phone.value.replace(/\s/g, '')}`}>{church.phone.value}</a>
           <a className="mt-1 block break-all text-ivory/80 hover:text-ivory" href={`mailto:${church.email.value}`}>{church.email.value}</a>
           <div className="mt-4 flex gap-4">
             {church.socials.map((s) => (
-              <a key={s.label} href={s.href} target="_blank" rel="noreferrer" className="underline decoration-fs-gold underline-offset-4">{s.label}</a>
+              <a key={s.label} href={s.href} target="_blank" rel="noreferrer" className="underline decoration-ivory/40 underline-offset-4 hover:decoration-ivory">{s.label}</a>
             ))}
           </div>
         </div>
         <div className="ft-col text-sm">
-          <h4 className="eyebrow mb-4 text-muted">Explore</h4>
+          <h4 className="mb-3 text-ivory/50">Explore</h4>
           <ul className="grid grid-cols-2 gap-y-1 md:grid-cols-1">
             {nav.map((n) => (
               <li key={n.href}><a href={n.href} className="text-ivory/80 hover:text-ivory">{n.label}</a></li>
@@ -61,7 +61,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="ft-big display mt-16 select-none overflow-hidden text-[23.5vw] leading-[0.78] text-ivory md:mt-24" aria-hidden>
+      <div className="ft-big font-display mt-16 select-none overflow-hidden text-[27vw] font-semibold leading-[0.95] tracking-[-0.05em] text-ivory md:mt-24" aria-hidden>
         <Chars text="Ilupeju" />
       </div>
 

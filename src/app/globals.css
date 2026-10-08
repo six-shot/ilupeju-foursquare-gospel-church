@@ -24,8 +24,9 @@
   --color-fs-blue: var(--fs-blue);
   --color-fs-gold: var(--fs-gold);
   --color-fs-purple: var(--fs-purple);
-  --font-serif: var(--font-instrument), Georgia, serif;
+  --font-serif: var(--font-caslon), Georgia, serif;
   --font-sans: var(--font-inter-tight), system-ui, sans-serif;
+  --font-display: var(--font-bricolage), system-ui, sans-serif;
 }
 
 /* ------------------------------------------------------------------- base */
@@ -70,7 +71,7 @@ html.lenis body {
   text-transform: uppercase;
 }
 .serif {
-  font-family: var(--font-instrument), Georgia, serif;
+  font-family: var(--font-caslon), Georgia, serif;
   font-weight: 400;
   letter-spacing: -0.02em;
 }

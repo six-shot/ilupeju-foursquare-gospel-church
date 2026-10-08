@@ -1,16 +1,22 @@
 import type { Metadata, Viewport } from 'next';
-import { Anton, Instrument_Serif, Inter_Tight } from 'next/font/google';
+import { Anton, Bricolage_Grotesque, Inter_Tight, Libre_Caslon_Text } from 'next/font/google';
 import './globals.css';
 
-const serif = Instrument_Serif({
-  variable: '--font-instrument',
+const serif = Libre_Caslon_Text({
+  variable: '--font-caslon',
   subsets: ['latin'],
-  weight: '400',
+  weight: ['400', '700'],
   style: ['normal', 'italic'],
 });
 
 const sans = Inter_Tight({
   variable: '--font-inter-tight',
+  subsets: ['latin'],
+});
+
+/** Headline face for the redesigned sections. */
+const display = Bricolage_Grotesque({
+  variable: '--font-bricolage',
   subsets: ['latin'],
 });
 
@@ -33,7 +39,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
-    <html lang="en" className={`${serif.variable} ${sans.variable} ${poster.variable} antialiased`} suppressHydrationWarning>
+    <html lang="en" className={`${serif.variable} ${sans.variable} ${display.variable} ${poster.variable} antialiased`} suppressHydrationWarning>
       <body suppressHydrationWarning>{children}</body>
     </html>
   );

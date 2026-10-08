@@ -1,38 +1,39 @@
 import Loader from '@/components/Loader';
 import SmoothScroll from '@/components/SmoothScroll';
 import Nav from '@/components/Nav';
-import Ticker from '@/components/Ticker';
+// import Ticker from '@/components/Ticker';
 import Hero from '@/components/Hero';
-import YearTheme from '@/components/YearTheme';
-import Foursquare from '@/components/Foursquare';
-import Life from '@/components/Life';
-import Media from '@/components/Media';
-import Events from '@/components/Events';
-import YouthWeekScene from '@/components/youth/YouthWeekScene';
-import Services from '@/components/Services';
-import Visit from '@/components/Visit';
+// import YearTheme from '@/components/YearTheme';
+// import Foursquare from '@/components/Foursquare';
+// import Life from '@/components/Life';
+// import Media from '@/components/Media';
+// import Events from '@/components/Events';
+// import YouthWeekScene from '@/components/youth/YouthWeekScene';
+// import Services from '@/components/Services';
+// import Visit from '@/components/Visit';
 import Footer from '@/components/Footer';
 
+// Redesign in progress: sections are commented out and come back one at a time.
 export default function Home() {
   return (
     <>
       <SmoothScroll />
       <Loader />
       <Nav />
-      <Ticker />
+      {/* <Ticker /> */}
       <main id="top">
         <Hero />
-        <YearTheme />
-        <Foursquare />
-        <Life />
-        <Media />
-        <Events />
-        <YouthWeekScene />
-        <Services />
-        <Visit />
+        {/* <YearTheme /> */}
+        {/* <Foursquare /> */}
+        {/* <Life /> */}
+        {/* <Media /> */}
+        {/* <Events /> */}
+        {/* <YouthWeekScene /> */}
+        {/* <Services /> */}
+        {/* <Visit /> */}
       </main>
       <Footer />
-      <div className="grain" aria-hidden />
+      {/* <div className="grain" aria-hidden /> */}
     </>
   );
 }

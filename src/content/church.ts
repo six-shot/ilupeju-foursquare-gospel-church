@@ -63,6 +63,13 @@ export const services: { day: string; name: string; time: string; note?: string 
   { day: 'Thursday', name: 'Prayer Meeting', time: '6:30pm' },
 ];
 
+/** The three facts at the foot of the hero — keep in step with `services` above. */
+export const heroFacts: { label: string; value: string; href?: string }[] = [
+  { label: 'Sundays', value: '7:30am & 10:10am' },
+  { label: 'Midweek', value: 'Tue, Wed & Thu · 6:30pm' },
+  { label: 'Find us', value: '33 Iseyin Street, Palm Grove', href: church.mapsUrl },
+];
+
 /** National leadership (verified). */
 export const denomination = {
   founded: { value: '4 November 1954', verified: true, source: 'Wikipedia — Foursquare Gospel Church in Nigeria' },

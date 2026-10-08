@@ -61,7 +61,7 @@ export default function Loader() {
         <Emblem className="h-28 w-28 md:h-36 md:w-36" tileClass="ld-tile" colored symbolColor="#0d0c0a" />
         <div className="ld-name text-center">
           <span className="line-mask">
-            <span className="line-inner serif text-3xl italic text-ivory md:text-4xl">Ilupeju Foursquare</span>
+            <span className="line-inner serif text-2xl text-ivory md:text-3xl">Ilupeju Foursquare</span>
           </span>
           <span className="line-mask mt-2">
             <span className="line-inner eyebrow text-muted">Gospel Church · Lagos</span>
