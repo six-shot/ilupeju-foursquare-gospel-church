@@ -132,4 +132,5 @@ export const nav = [
   { label: 'Events', href: '#events' },
   { label: 'Services', href: '#services' },
   { label: 'Visit', href: '#visit' },
+  { label: 'Youth Week', href: '/youth-week-2027' },
 ];

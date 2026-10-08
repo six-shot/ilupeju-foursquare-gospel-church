@@ -45,3 +45,6 @@ next-env.d.ts
 
 # local QC screenshots (scripts/capture.mjs)
 /research/qc/
+
+# local Youth Week sign-ups written by `next dev` (personal data)
+/data/

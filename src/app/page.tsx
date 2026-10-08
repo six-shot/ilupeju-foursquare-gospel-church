@@ -8,6 +8,7 @@ import Foursquare from '@/components/Foursquare';
 import Life from '@/components/Life';
 import Media from '@/components/Media';
 import Events from '@/components/Events';
+import YouthWeekScene from '@/components/youth/YouthWeekScene';
 import Services from '@/components/Services';
 import Visit from '@/components/Visit';
 import Footer from '@/components/Footer';
@@ -26,6 +27,7 @@ export default function Home() {
         <Life />
         <Media />
         <Events />
+        <YouthWeekScene />
         <Services />
         <Visit />
       </main>

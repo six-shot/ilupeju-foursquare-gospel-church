@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Instrument_Serif, Inter_Tight } from 'next/font/google';
+import { Anton, Instrument_Serif, Inter_Tight } from 'next/font/google';
 import './globals.css';
 
 const serif = Instrument_Serif({
@@ -12,6 +12,13 @@ const serif = Instrument_Serif({
 const sans = Inter_Tight({
   variable: '--font-inter-tight',
   subsets: ['latin'],
+});
+
+/** Heavy condensed face, used only for the Youth Week "Sent Ones" scene. */
+const poster = Anton({
+  variable: '--font-anton',
+  subsets: ['latin'],
+  weight: '400',
 });
 
 export const metadata: Metadata = {
@@ -27,7 +34,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
-    <html lang="en" className={`${serif.variable} ${sans.variable} antialiased`} suppressHydrationWarning>
+    <html lang="en" className={`${serif.variable} ${sans.variable} ${poster.variable} antialiased`} suppressHydrationWarning>
       <body suppressHydrationWarning>{children}</body>
     </html>
   );
