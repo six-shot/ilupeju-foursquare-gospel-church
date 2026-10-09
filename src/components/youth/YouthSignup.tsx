@@ -156,6 +156,9 @@ export default function YouthSignup() {
                 <legend className="sr-only">Which Youth Week merch would you buy?</legend>
                 <p className="text-2xl uppercase leading-none" style={POSTER} aria-hidden>Which merch would you buy?</p>
                 <p className="mt-2 text-sm text-ink/55">Tick any you would pay for. Nothing is ordered or paid for here; it tells us what to produce.</p>
+                <p className="mt-3 rounded-lg border border-ink/15 bg-ink/5 px-3.5 py-2.5 text-sm text-ink/80">
+                  <span className="font-semibold text-ink">Please note:</span> the pictures below are not the final designs. We only want to know which items you would like.
+                </p>
                 <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
                   {merch.map((m) => (
                     <MerchCard key={m.key} item={m.key} label={m.label} checked={picked.includes(m.key)} onChange={() => setPicked((v) => toggle(v, m.key))} />
